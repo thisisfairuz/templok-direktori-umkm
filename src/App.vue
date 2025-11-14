@@ -1,17 +1,17 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Hero from "./components/Hero.vue";
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
+  <div class="absolute inset-0 h-full w-full grid-templok">
+    <!-- <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    </a> -->
+    <Hero />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
