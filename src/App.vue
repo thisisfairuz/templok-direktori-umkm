@@ -8,13 +8,17 @@ import SummaryCard from "./components/SummaryCard.vue";
 import UMKMZone from "./components/UMKMZone.vue";
 </script>
 
-
 <template>
   <div class="absolute inset-0 h-full w-full grid-templok">
     <Header />
     <Hero />
-    <About />
-    <SummaryCard />
+    <div class="relative">
+      <About />
+      <!-- SummaryCard floating di antara About dan UMKMZone -->
+      <div class="absolute left-0 right-0 -bottom-32 flex justify-center">
+        <SummaryCard />
+      </div>
+    </div>
     <UMKMZone />
     <Developers />
     <Footer />

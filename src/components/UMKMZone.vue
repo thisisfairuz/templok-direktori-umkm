@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Badge from './Badge.vue'
-import Pagination from './Pagination.vue'
-import { useUmkmData } from '../composable/UseUmkmData'
+import { ref } from "vue";
+import Badge from "./Badge.vue";
+import Pagination from "./Pagination.vue";
+import { useUmkmData } from "../composable/UseUmkmData";
 
 // Import data UMKM yang sudah di-transform
-const { umkmData, categories } = useUmkmData()
+const { umkmData, categories } = useUmkmData();
 
 // Search & Filter state
 const searchQuery = ref("");
@@ -18,20 +18,20 @@ const toggleCategory = (category: string) => {
   } else {
     selectedCategory.value = category;
   }
-}
+};
 
 // Handle card click
 const handleCardClick = (id: number) => {
-  console.log('UMKM Card clicked, ID:', id)
+  console.log("UMKM Card clicked, ID:", id);
   // TODO: Navigate to detail page
   // router.push(`/umkm/${id}`)
-}
+};
 </script>
 
 <template>
   <section
     id="templok-zone"
-    class="w-full min-h-screen flex flex-col justify-start items-center bg-blue-templok"
+    class="w-full min-h-screen flex flex-col justify-start items-center bg-blue-templok pt-44"
   >
     <!-- Marque -->
     <div class="w-full relative py-8 mb-24">
@@ -83,9 +83,9 @@ const handleCardClick = (id: number) => {
     <div class="flex items-center relative">
       <input
         v-model="searchQuery"
-        type="search" 
+        type="search"
         placeholder="Cari UMKM..."
-        class="w-[828px] rounded-full py-2 pl-4 pr-12 text-[20px] text-blue-templok font-montserrat font-reguler leading-none bg-white focus:ring-2 focus:ring-green-templok focus:outline-none" 
+        class="w-[828px] rounded-full py-2 pl-4 pr-12 text-[20px] text-blue-templok font-montserrat font-reguler leading-none bg-white focus:ring-2 focus:ring-green-templok focus:outline-none"
       />
       <svg
         class="absolute right-4 w-6 h-6 text-blue-templok pointer-events-none"
@@ -104,8 +104,8 @@ const handleCardClick = (id: number) => {
 
     <!-- Category -->
     <div class="mt-4 flex gap-2 items-center mb-12 flex-wrap justify-center">
-      <Badge 
-        v-for="category in categories" 
+      <Badge
+        v-for="category in categories"
         :key="category"
         :text="category"
         :class="{ 'ring-2 ring-green-templok': selectedCategory === category }"
@@ -115,8 +115,8 @@ const handleCardClick = (id: number) => {
     </div>
 
     <!-- Pagination Component with real data -->
-    <Pagination 
-      :all-umkm="umkmData" 
+    <Pagination
+      :all-umkm="umkmData"
       :search-query="searchQuery"
       :selected-category="selectedCategory"
       @card-click="handleCardClick"
