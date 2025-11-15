@@ -14,7 +14,7 @@ defineEmits<{
   click: [id:number]
 }>()
 
-const truncateText = (text: string, maxLength = 100) => {
+const truncateText = (text: string, maxLength = 80) => {
   if (!text) return ''
   return text.length > maxLength ? text.slice(0, maxLength) + '...' : text
 }
@@ -23,7 +23,7 @@ const truncateText = (text: string, maxLength = 100) => {
 
 <template>
   <div 
-    @click="$emit('click')"
+    @click="$emit('click', id)"
     class="w-[285px] h-[314px] p-2 bg-white border-4 border-blue-templok rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
   >
     <!-- Image -->

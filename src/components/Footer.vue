@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full bg-white border-t border-gray-200 py-12">
+  <footer class="w-full bg-white border-t border-gray-200 py-12 z-70">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Logo -->
       <div class="text-center mb-4">

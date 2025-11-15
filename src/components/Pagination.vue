@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import CardUMKM from './CardUMKM.vue'
+import { useRouter } from 'vue-router'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
 // Props
+
+const router = useRouter()
+
+
+
 const props = defineProps<{
   allUmkm: Array<{
     id: number
@@ -95,8 +101,9 @@ const nextPage = () => {
 const handleCardClick = (id: number) => {
   emit('cardClick', id)
   // TODO: Navigate to detail page
-  // router.push(`/umkm/${id}`)
+  router.push(`/detail/${id}`)
 }
+
 
 // Generate page numbers 
 const visiblePages = computed(() => {
