@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full -mt-6 flex gap-0">
+  <div id="about" class="w-full -mt-6 flex gap-0">
     <svg
       width="466"
       height="26"
@@ -53,7 +53,7 @@
       />
     </svg>
   </div>
-  <section id="about" class="w-full px-16 pb-32 -mt-1 bg-white">
+  <section class="w-full px-16 pb-32 -mt-1 bg-white">
     <div class="flex space-x-10 py-10">
       <h1
         class="league-spartan-black text-9xl -mt-10 pt-16 pb-0 text-blue-templok -rotate-90"

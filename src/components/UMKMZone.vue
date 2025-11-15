@@ -30,7 +30,6 @@ const handleCardClick = (id: number) => {
 
 <template>
   <section
-    id="templok-zone"
     class="w-full min-h-screen flex flex-col justify-start items-center bg-blue-templok pt-44"
   >
     <!-- Marque -->
@@ -74,6 +73,7 @@ const handleCardClick = (id: number) => {
 
     <!-- Title -->
     <div
+      id="templok-zone"
       class="league-spartan-black font-black mb-3 justify-center items-center flex flex-col"
     >
       <p class="text-green-templok text-8xl">TEMPLOK ZONE</p>
