@@ -1,11 +1,12 @@
 <template>
-  <div class="w-full -mt-24 flex">
+  <div class="w-full -mt-24 flex gap-0">
     <svg
       width="466"
       height="26"
       viewBox="0 0 466 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      class="-ms-px"
     >
       <path
         d="M449.307 6.357C442.139 -2.119 431.597 -2.119 424.43 6.357C420.186 11.375 414.701 15.053 407.703 15.053C400.706 15.053 395.215 11.376 390.971 6.357C383.803 -2.119 373.241 -2.119 366.074 6.357C361.83 11.375 356.335 15.053 349.338 15.053C342.341 15.053 336.845 11.376 332.601 6.357C325.434 -2.119 314.869 -2.119 307.701 6.357C303.457 11.375 297.961 15.053 290.963 15.053C283.965 15.053 278.469 11.376 274.225 6.357C267.057 -2.119 256.492 -2.119 249.325 6.357C245.081 11.375 239.584 15.053 232.587 15.053C225.59 15.053 220.093 11.376 215.849 6.357C208.682 -2.119 198.117 -2.119 190.949 6.357C186.705 11.375 181.208 15.053 174.211 15.053C167.214 15.053 161.717 11.376 157.473 6.357C150.306 -2.119 139.741 -2.119 132.573 6.357C128.329 11.375 122.832 15.053 115.835 15.053C108.838 15.053 103.341 11.376 99.097 6.357C91.93 -2.119 81.365 -2.119 74.197 6.357C69.953 11.375 64.456 15.053 57.459 15.053C50.462 15.053 44.965 11.376 40.721 6.357C33.554 -2.119 23.445 -2.119 16.278 6.357C12.037 11.375 7 15.052 0 15.052V25.785H28.274H57.462H86.65H115.838H145.026H174.214H203.4H232.588H261.776H290.964H320.152H349.34H378.528H407.716H436.904H466V15.052C460 15.052 453.551 11.375 449.307 6.357Z"
@@ -18,6 +19,7 @@
       viewBox="0 0 466 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      class="-ms-px"
     >
       <path
         d="M449.307 6.357C442.139 -2.119 431.597 -2.119 424.43 6.357C420.186 11.375 414.701 15.053 407.703 15.053C400.706 15.053 395.215 11.376 390.971 6.357C383.803 -2.119 373.241 -2.119 366.074 6.357C361.83 11.375 356.335 15.053 349.338 15.053C342.341 15.053 336.845 11.376 332.601 6.357C325.434 -2.119 314.869 -2.119 307.701 6.357C303.457 11.375 297.961 15.053 290.963 15.053C283.965 15.053 278.469 11.376 274.225 6.357C267.057 -2.119 256.492 -2.119 249.325 6.357C245.081 11.375 239.584 15.053 232.587 15.053C225.59 15.053 220.093 11.376 215.849 6.357C208.682 -2.119 198.117 -2.119 190.949 6.357C186.705 11.375 181.208 15.053 174.211 15.053C167.214 15.053 161.717 11.376 157.473 6.357C150.306 -2.119 139.741 -2.119 132.573 6.357C128.329 11.375 122.832 15.053 115.835 15.053C108.838 15.053 103.341 11.376 99.097 6.357C91.93 -2.119 81.365 -2.119 74.197 6.357C69.953 11.375 64.456 15.053 57.459 15.053C50.462 15.053 44.965 11.376 40.721 6.357C33.554 -2.119 23.445 -2.119 16.278 6.357C12.037 11.375 7 15.052 0 15.052V25.785H28.274H57.462H86.65H115.838H145.026H174.214H203.4H232.588H261.776H290.964H320.152H349.34H378.528H407.716H436.904H466V15.052C460 15.052 453.551 11.375 449.307 6.357Z"
@@ -30,6 +32,7 @@
       viewBox="0 0 466 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      class="-ms-px"
     >
       <path
         d="M449.307 6.357C442.139 -2.119 431.597 -2.119 424.43 6.357C420.186 11.375 414.701 15.053 407.703 15.053C400.706 15.053 395.215 11.376 390.971 6.357C383.803 -2.119 373.241 -2.119 366.074 6.357C361.83 11.375 356.335 15.053 349.338 15.053C342.341 15.053 336.845 11.376 332.601 6.357C325.434 -2.119 314.869 -2.119 307.701 6.357C303.457 11.375 297.961 15.053 290.963 15.053C283.965 15.053 278.469 11.376 274.225 6.357C267.057 -2.119 256.492 -2.119 249.325 6.357C245.081 11.375 239.584 15.053 232.587 15.053C225.59 15.053 220.093 11.376 215.849 6.357C208.682 -2.119 198.117 -2.119 190.949 6.357C186.705 11.375 181.208 15.053 174.211 15.053C167.214 15.053 161.717 11.376 157.473 6.357C150.306 -2.119 139.741 -2.119 132.573 6.357C128.329 11.375 122.832 15.053 115.835 15.053C108.838 15.053 103.341 11.376 99.097 6.357C91.93 -2.119 81.365 -2.119 74.197 6.357C69.953 11.375 64.456 15.053 57.459 15.053C50.462 15.053 44.965 11.376 40.721 6.357C33.554 -2.119 23.445 -2.119 16.278 6.357C12.037 11.375 7 15.052 0 15.052V25.785H28.274H57.462H86.65H115.838H145.026H174.214H203.4H232.588H261.776H290.964H320.152H349.34H378.528H407.716H436.904H466V15.052C460 15.052 453.551 11.375 449.307 6.357Z"
@@ -42,6 +45,7 @@
       viewBox="0 0 466 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      class="-ms-px"
     >
       <path
         d="M449.307 6.357C442.139 -2.119 431.597 -2.119 424.43 6.357C420.186 11.375 414.701 15.053 407.703 15.053C400.706 15.053 395.215 11.376 390.971 6.357C383.803 -2.119 373.241 -2.119 366.074 6.357C361.83 11.375 356.335 15.053 349.338 15.053C342.341 15.053 336.845 11.376 332.601 6.357C325.434 -2.119 314.869 -2.119 307.701 6.357C303.457 11.375 297.961 15.053 290.963 15.053C283.965 15.053 278.469 11.376 274.225 6.357C267.057 -2.119 256.492 -2.119 249.325 6.357C245.081 11.375 239.584 15.053 232.587 15.053C225.59 15.053 220.093 11.376 215.849 6.357C208.682 -2.119 198.117 -2.119 190.949 6.357C186.705 11.375 181.208 15.053 174.211 15.053C167.214 15.053 161.717 11.376 157.473 6.357C150.306 -2.119 139.741 -2.119 132.573 6.357C128.329 11.375 122.832 15.053 115.835 15.053C108.838 15.053 103.341 11.376 99.097 6.357C91.93 -2.119 81.365 -2.119 74.197 6.357C69.953 11.375 64.456 15.053 57.459 15.053C50.462 15.053 44.965 11.376 40.721 6.357C33.554 -2.119 23.445 -2.119 16.278 6.357C12.037 11.375 7 15.052 0 15.052V25.785H28.274H57.462H86.65H115.838H145.026H174.214H203.4H232.588H261.776H290.964H320.152H349.34H378.528H407.716H436.904H466V15.052C460 15.052 453.551 11.375 449.307 6.357Z"
@@ -49,50 +53,80 @@
       />
     </svg>
   </div>
-  <section id="about" class="w-full px-16 bg-green-templok">
-    <div class="space-x-10 py-10">
-      <h1
-        class="font-montserrat font-bold md:text-5xl pt-16 pb-0 text-blue-templok"
-      >
-        Ringkasan
-      </h1>
-      <div
-        class="space-y-7  font-montserrat font-semibold text-xl text-blue-templok"
-      >
-        <p>
-          <img
-            src="/src/assets/logo-templok.svg"
-            alt="TEMPLOK"
-            class="w-36 float-start me-2"
-          />
-          (Tempat Lokal) adalah web direktori yang ngerangkul semua UMKM lokal
-          biar lebih gampang ditemukan, dikenal, dan diingat. Kita nyediain
-          ruang digital buat pelaku usaha lokal biar bisa nemplok bareng, dari
-          makanan, fashion, kerajinan, sampe jasa kreatif.
-        </p>
-        <p>
-          Tujuannya simpel, biar orang-orang makin gampang nemuin produk dan
-          layanan lokal yang sesuai selera mereka. Lewat
-          <img
-            src="/src/assets/logo-templok.svg"
-            alt="TEMPLOK"
-            class="w-36 float-start me-2"
-          />
-          kamu bisa eksplor usaha lokal di sekitar kamu, cari inspirasi, atau
-          nemuin hidden gem yang belum viral tapi layak banget didukung.
-        </p>
-        <p>
-          <img
-            src="/src/assets/logo-templok.svg"
-            alt="TEMPLOK"
-            class="w-36 float-start me-2"
-          />
-          itu bukan cuma daftar bisnis, tapi wadah buat ngangkat nama-nama lokal
-          yang punya taste, passion, dan pride. Karena yang lokal itu bukan cuma
-          deket, tapi juga keren banget.
-        </p>
+  <section id="summary" class="w-full px-16 bg-green-templok -mt-2 py-16">
+    <div class="grid grid-cols-12 gap-10 items-start">
+
+      <!-- Kiri: Ringkasan & Deskripsi (6 kolom) -->
+      <div class="col-span-12 md:col-span-8 space-y-6">
+        <h1 class="font-montserrat font-bold text-4xl md:text-5xl text-blue-templok">
+          Ringkasan
+        </h1>
+
+        <div class="mt-4 space-y-7 font-montserrat font-semibold text-xl text-blue-templok">
+          <p v-for="(para, index) in umkm.description.split('\n\n')" :key="index">
+            {{ para }}
+          </p>
+        </div>
       </div>
-      <img src="/src/assets/img-about.png" alt="" />
+
+      <!-- Kanan: Gambar (6 kolom) -->
+      <div class="col-span-12 md:col-span-4 flex justify-center md:justify-end">
+        <!-- taruh gambar di sini nanti -->
+      </div>
+
     </div>
   </section>
+
+  <section id="location" class="w-full px-16 py-16 grid-templok-light">
+    <div class="grid grid-cols-12 gap-10 items-start">
+      <div class="col-span-12 md:col-span-8 space-y-6">
+        <h1 class="font-montserrat font-bold text-4xl md:text-5xl text-blue-templok mb-6">
+          Lokasi
+        </h1>
+        <PriceList/>
+        <div class="flex gap-4 items-start mb-4 pr-4">
+          <!-- Map Pin Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-blue-templok flex-shrink-0 mt-1">
+            <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+          </svg>
+          
+          <!-- Address Text -->
+          <p class="font-montserrat text-lg text-black font-semibold">
+            {{ umkm.address }}            
+          </p>
+        </div>
+        <iframe 
+          :src="umkm.maps_url" 
+          class="w-full rounded-lg pr-4" 
+          height="450" 
+          style="border: 0" 
+          allowfullscreen 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      
+      <!-- Map or other content -->
+      <div>
+        <!-- Konten lainnya di sini -->
+      </div>
+    </div>
+  </section>
+
 </template>
+<script setup>
+import { useRoute, useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { useUmkmData } from '../composable/UseUmkmData'
+import CardUMKM from './CardUMKM.vue'
+import '../style.css'
+
+
+const route = useRoute()
+const router = useRouter()
+const id = Number(route.params.id)
+
+const { umkmData } = useUmkmData()
+
+const umkm = computed(() => umkmData.find(item => item.id === id))
+</script>
