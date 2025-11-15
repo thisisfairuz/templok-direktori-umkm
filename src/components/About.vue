@@ -1,5 +1,5 @@
 <template>
-  <div id="about" class="w-full -mt-6 flex gap-0">
+  <div id="about" class="w-full -mt-6 flex gap-0 overflow-x-hidden">
     <svg
       width="466"
       height="26"
@@ -53,21 +53,30 @@
       />
     </svg>
   </div>
-  <section class="w-full px-16 pb-32 -mt-1 bg-white">
-    <div class="flex space-x-10 py-10">
+  <section
+    class="w-full px-4 sm:px-8 lg:px-16 lg:pb-32 -mt-3 md:-mt-3 bg-white"
+  >
+    <div class="flex flex-col lg:flex-row lg:space-x-10 py-5 lg:py-10 relative">
+      <!-- Rotated heading only large screens -->
       <h1
-        class="league-spartan-black text-9xl -mt-10 pt-16 pb-0 text-blue-templok -rotate-90"
+        class="hidden lg:block league-spartan-black text-7xl xl:text-9xl -mt-5 pt-16 pb-0 text-blue-templok -rotate-90"
       >
         ABOUT
       </h1>
+      <!-- Normal heading for small/medium screens -->
+      <h2
+        class="block lg:hidden league-spartan-black text-6xl md:text-7xl lg:text-8xl text-blue-templok mb-8 text-center"
+      >
+        ABOUT
+      </h2>
       <div
-        class="space-y-7 -ms-44 text-justify font-montserrat font-semibold text-xl text-blue-templok"
+        class="space-y-6 lg:space-y-7 lg:-ms-44 text-justify font-montserrat font-semibold text-base sm:text-lg md:text-xl text-blue-templok lg:max-w-3xl"
       >
         <p>
           <img
             src="/src/assets/logo-templok.svg"
             alt="TEMPLOK"
-            class="w-36 float-start me-2"
+            class="w-24 sm:w-28 md:w-32 lg:w-36 float-start me-2"
           />
           (Tempat Lokal) adalah web direktori yang ngerangkul semua UMKM lokal
           biar lebih gampang ditemukan, dikenal, dan diingat. Kita nyediain
@@ -80,7 +89,7 @@
           <img
             src="/src/assets/logo-templok.svg"
             alt="TEMPLOK"
-            class="w-36 float-start me-2"
+            class="w-24 sm:w-28 md:w-32 lg:w-36 float-start me-2"
           />
           kamu bisa eksplor usaha lokal di sekitar kamu, cari inspirasi, atau
           nemuin hidden gem yang belum viral tapi layak banget didukung.
@@ -89,14 +98,20 @@
           <img
             src="/src/assets/logo-templok.svg"
             alt="TEMPLOK"
-            class="w-36 float-start me-2"
+            class="w-24 sm:w-28 md:w-32 lg:w-36 float-start me-2"
           />
           itu bukan cuma daftar bisnis, tapi wadah buat ngangkat nama-nama lokal
           yang punya taste, passion, dan pride. Karena yang lokal itu bukan cuma
           deket, tapi juga keren banget.
         </p>
       </div>
-      <img src="/src/assets/img-about.png" alt="" />
+      <div class="mt-10 lg:mt-0 flex justify-center lg:justify-start lg:flex-1">
+        <img
+          src="/src/assets/img-about.png"
+          alt="Foto Tentang"
+          class="w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[440px] object-cover rounded-3xl"
+        />
+      </div>
     </div>
   </section>
 </template>
