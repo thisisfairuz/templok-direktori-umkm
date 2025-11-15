@@ -16,6 +16,11 @@ const props = defineProps<{
   selectedCategory: string | null
 }>()
 
+// Emit untuk handle click card
+const emit = defineEmits<{
+  cardClick: [id: number]
+}>()
+
 // Filter UMKM berdasarkan search dan category
 const filteredUMKM = computed(() => {
   let result = props.allUmkm
@@ -87,14 +92,15 @@ const nextPage = () => {
   }
 }
 
-const handleCardClick = (umkm: any) => {
-  console.log('Card clicked:', umkm)
-  // TODO
+const handleCardClick = (id: number) => {
+  emit('cardClick', id)
+  // TODO: Navigate to detail page
+  // router.push(`/umkm/${id}`)
 }
 
 // Generate page numbers 
 const visiblePages = computed(() => {
-  const pages = []
+  const pages: (number | string)[] = []
   const delta = 1
   
   for (let i = 1; i <= totalPages.value; i++) {
@@ -120,11 +126,12 @@ const visiblePages = computed(() => {
         <CardUMKM
           v-for="umkm in paginatedUMKM"
           :key="umkm.id"
+          :id="umkm.id"
           :image="umkm.image"
           :title="umkm.title"
           :description="umkm.description"
           :button-text="umkm.category"
-          @click="handleCardClick(umkm)"
+          @click="handleCardClick(umkm.id)"
         />
       </div>
 

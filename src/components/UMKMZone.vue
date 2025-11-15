@@ -2,32 +2,14 @@
 import { ref } from 'vue'
 import Badge from './Badge.vue'
 import Pagination from './Pagination.vue'
+import { useUmkmData } from '../composable/UseUmkmData'
 
-// Data UMKM
-const allUMKM = ref([
-  { id: 1, image: '/src/assets/vue.svg', title: 'YAMIE GONEL', description: 'Yamie Gonel menghadirkan cita rasa mie klasik dengan sentuhan modern. Setiap mangkuk dibuat dengan bumbu segar dan bumbu khas yang bikin rasanya beda banget.', category: 'MAKANAN' },
-  { id: 2, image: '/images/toko-kue.jpg', title: 'TOKO KUE MANIS', description: 'Menyediakan berbagai macam kue tradisional dan modern dengan bahan berkualitas tinggi.', category: 'KUE' },
-  { id: 3, image: '/images/warung-kopi.jpg', title: 'WARUNG KOPI NUSANTARA', description: 'Kopi pilihan dari berbagai daerah di Indonesia. Disajikan dengan teknik brewing modern.', category: 'MINUMAN' },
-  { id: 4, image: '/images/bakso.jpg', title: 'BAKSO BERANAK', description: 'Bakso kenyal dengan kuah yang gurih, dilengkapi dengan bakso beranak yang unik.', category: 'MAKANAN' },
-  { id: 5, image: '/images/laundry.jpg', title: 'LAUNDRY EXPRESS', description: 'Layanan laundry cepat dan bersih dengan harga terjangkau untuk semua kalangan.', category: 'JASA' },
-  { id: 6, image: '/images/salon.jpg', title: 'SALON CANTIK', description: 'Salon kecantikan dengan pelayanan ramah dan hasil memuaskan.', category: 'JASA' },
-  { id: 7, image: '/images/toko-baju.jpg', title: 'FASHION STORE', description: 'Menjual berbagai pakaian trendy dengan harga terjangkau untuk semua usia.', category: 'FASHION' },
-  { id: 8, image: '/images/sayur.jpg', title: 'TOKO SAYUR SEGAR', description: 'Sayuran segar langsung dari petani lokal setiap hari.', category: 'SAYURAN' },
-  { id: 9, image: '/images/elektronik.jpg', title: 'SERVICE ELEKTRONIK', description: 'Jasa perbaikan berbagai peralatan elektronik rumah tangga dengan garansi.', category: 'JASA' },
-  { id: 10, image: '/images/ayam.jpg', title: 'AYAM GEPREK MANTUL', description: 'Ayam geprek dengan sambal level yang bisa disesuaikan dengan selera.', category: 'MAKANAN' },
-  { id: 11, image: '/images/bunga.jpg', title: 'TOKO BUNGA INDAH', description: 'Menyediakan berbagai rangkaian bunga untuk berbagai acara spesial.', category: 'BUNGA' },
-  { id: 12, image: '/images/roti.jpg', title: 'ROTI BAKAR ENAK', description: 'Roti bakar dengan berbagai topping pilihan yang lezat dan menggugah selera.', category: 'MAKANAN' },
-  { id: 13, image: '/images/foto.jpg', title: 'STUDIO FOTO', description: 'Jasa fotografi profesional untuk berbagai kebutuhan acara.', category: 'JASA' },
-  { id: 14, image: '/images/bengkel.jpg', title: 'BENGKEL MOTOR', description: 'Service motor dengan mekanik berpengalaman dan harga terjangkau.', category: 'JASA' },
-  { id: 15, image: '/images/tas.jpg', title: 'TAS HANDMADE', description: 'Tas handmade berkualitas dengan desain unik dan menarik.', category: 'FASHION' },
-])
+// Import data UMKM yang sudah di-transform
+const { umkmData, categories } = useUmkmData()
 
 // Search & Filter state
 const searchQuery = ref('')
 const selectedCategory = ref<string | null>(null)
-
-// Categories
-const categories = ['TEKNOLOGI', 'KULINER', 'JASA', 'KERAJINAN', 'BUSANA']
 
 // Toggle category
 const toggleCategory = (category: string) => {
@@ -36,6 +18,13 @@ const toggleCategory = (category: string) => {
   } else {
     selectedCategory.value = category
   }
+}
+
+// Handle card click
+const handleCardClick = (id: number) => {
+  console.log('UMKM Card clicked, ID:', id)
+  // TODO: Navigate to detail page
+  // router.push(`/umkm/${id}`)
 }
 </script>
 
@@ -84,6 +73,7 @@ const toggleCategory = (category: string) => {
       <input 
         v-model="searchQuery"
         type="search" 
+        placeholder="Cari UMKM..."
         class="w-[828px] rounded-full py-2 pl-4 pr-12 text-[20px] text-blue-templok font-montserrat font-reguler leading-none bg-white focus:ring-2 focus:ring-green-templok focus:outline-none" 
       />
       <svg 
@@ -102,7 +92,7 @@ const toggleCategory = (category: string) => {
     </div>
 
     <!-- Category -->
-    <div class="mt-4 flex gap-2 items-center mb-12">
+    <div class="mt-4 flex gap-2 items-center mb-12 flex-wrap justify-center">
       <Badge 
         v-for="category in categories" 
         :key="category"
@@ -113,11 +103,12 @@ const toggleCategory = (category: string) => {
       />
     </div>
 
-    <!-- Pagination Component -->
+    <!-- Pagination Component with real data -->
     <Pagination 
-      :all-umkm="allUMKM" 
+      :all-umkm="umkmData" 
       :search-query="searchQuery"
       :selected-category="selectedCategory"
+      @card-click="handleCardClick"
     />
   </section>
 </template>
@@ -158,3 +149,4 @@ const toggleCategory = (category: string) => {
   }
 }
 </style>
+*/

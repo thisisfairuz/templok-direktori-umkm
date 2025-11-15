@@ -7,6 +7,7 @@ import About from "./components/About.vue";
 import UMKMZone from "./components/UMKMZone.vue";
 </script>
 
+
 <template>
   <div class="absolute inset-0 h-full w-full grid-templok">
     <Header />
