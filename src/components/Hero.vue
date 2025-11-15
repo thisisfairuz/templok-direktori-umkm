@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full h-full flex flex-col justify-center items-center">
+  <section class="w-full flex flex-col justify-center items-center h-full">
     <div class="flex space-x-1">
       <img
         src="/src/assets/bunga-green.svg"
