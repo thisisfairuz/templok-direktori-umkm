@@ -39,6 +39,13 @@
   font-style: normal;
 }
 
+.league-spartan-medium {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .bg-about {
   background-image: url("/src/assets/bg-about.png");
 }
@@ -49,4 +56,10 @@
 
 .clip-abt-bg {
   clip-path: inset(0% 10% round 100%);
+}
+
+/* Global smooth scrolling for anchor navigation */
+html,
+body {
+  scroll-behavior: smooth;
 }

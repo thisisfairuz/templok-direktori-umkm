@@ -1,5 +1,17 @@
+<script setup>
+const scrollToUMKMZone = () => {
+  const element = document.querySelector("#templok-zone");
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+</script>
+
 <template>
-  <section class="w-full flex flex-col justify-center items-center h-full">
+  <section
+    id="home"
+    class="w-full flex flex-col justify-center items-center h-full"
+  >
     <div class="flex space-x-1">
       <img
         src="/src/assets/bunga-green.svg"
@@ -18,11 +30,13 @@
             Biar yang kecil makin dikenal
           </p>
         </div>
-        <button
-          class="atkinson-hyperlegible-bold text-blue-templok bg-green-templok px-12 py-3 rounded-full text-5xl"
+        <a
+          href="#templok-zone"
+          @click.prevent="scrollToUMKMZone"
+          class="atkinson-hyperlegible-bold text-blue-templok bg-green-templok px-12 py-3 rounded-full text-5xl hover:scale-105 transition-transform duration-300 cursor-pointer relative inline-block"
         >
           Explore More!
-        </button>
+        </a>
       </div>
       <img
         src="/src/assets/bunga-white.svg"
