@@ -18,8 +18,8 @@ const props = defineProps<{
 
 // Emit untuk handle click card
 const emit = defineEmits<{
-  cardClick: [id: number]
-}>()
+  cardClick: [id: number];
+}>();
 
 // Filter UMKM berdasarkan search dan category
 const filteredUMKM = computed(() => {
@@ -102,16 +102,16 @@ const nextPage = () => {
 };
 
 const handleCardClick = (id: number) => {
-  emit('cardClick', id)
+  emit("cardClick", id);
   // TODO: Navigate to detail page
   // router.push(`/umkm/${id}`)
-}
+};
 
 // Generate page numbers
 const visiblePages = computed(() => {
-  const pages: (number | string)[] = []
-  const delta = 1
-  
+  const pages: (number | string)[] = [];
+  const delta = 1;
+
   for (let i = 1; i <= totalPages.value; i++) {
     if (
       i === 1 ||
@@ -133,7 +133,7 @@ const visiblePages = computed(() => {
     <div class="max-w-7xl mx-auto px-4">
       <div
         ref="gridRef"
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8 justify-items-center"
       >
         <CardUMKM
           v-for="umkm in paginatedUMKM"

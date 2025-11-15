@@ -30,7 +30,6 @@ const handleCardClick = (id: number) => {
 
 <template>
   <section
-    id="templok-zone"
     class="w-full min-h-screen flex flex-col justify-start items-center bg-blue-templok pt-44"
   >
     <!-- Marque -->
@@ -74,9 +73,12 @@ const handleCardClick = (id: number) => {
 
     <!-- Title -->
     <div
+      id="templok-zone"
       class="league-spartan-black font-black mb-3 justify-center items-center flex flex-col"
     >
-      <p class="text-green-templok text-8xl">TEMPLOK ZONE</p>
+      <p class="text-green-templok text-center text-6xl xl:text-9xl">
+        TEMPLOK ZONE
+      </p>
     </div>
 
     <!-- Search bar -->
@@ -85,7 +87,7 @@ const handleCardClick = (id: number) => {
         v-model="searchQuery"
         type="search"
         placeholder="Cari UMKM..."
-        class="w-[828px] rounded-full py-2 pl-4 pr-12 text-[20px] text-blue-templok font-montserrat font-reguler leading-none bg-white focus:ring-2 focus:ring-green-templok focus:outline-none"
+        class="lg:w-3xl rounded-full py-2 pl-4 pr-12 text-[20px] text-blue-templok font-montserrat font-reguler leading-none bg-white focus:ring-2 focus:ring-green-templok focus:outline-none"
       />
       <svg
         class="absolute right-4 w-6 h-6 text-blue-templok pointer-events-none"
