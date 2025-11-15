@@ -1,5 +1,8 @@
 <script setup>
+import Developers from "./components/Developers.vue";
+import Footer from "./components/Footer.vue";
 import Hero from "./components/Hero.vue";
+import UMKMZone from "./components/UMKMZone.vue";
 </script>
 
 
@@ -12,6 +15,9 @@ import Hero from "./components/Hero.vue";
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a> -->
     <Hero />
+    <UMKMZone />
+    <Developers />
+    <Footer />
   </div>
 </template>
 
