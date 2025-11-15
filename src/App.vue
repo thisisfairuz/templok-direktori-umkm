@@ -4,6 +4,7 @@ import Footer from "./components/Footer.vue";
 import Hero from "./components/Hero.vue";
 import Header from "./components/Header.vue";
 import About from "./components/About.vue";
+import SummaryCard from "./components/SummaryCard.vue";
 import UMKMZone from "./components/UMKMZone.vue";
 </script>
 
@@ -13,6 +14,7 @@ import UMKMZone from "./components/UMKMZone.vue";
     <Header />
     <Hero />
     <About />
+    <SummaryCard />
     <UMKMZone />
     <Developers />
     <Footer />

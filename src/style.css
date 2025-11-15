@@ -38,6 +38,13 @@
   font-style: normal;
 }
 
+.league-spartan-medium {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .bg-about {
   background-image: url("/src/assets/bg-about.png");
 }
