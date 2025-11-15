@@ -1,122 +1,134 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import CardUMKM from './CardUMKM.vue'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
+import { ref, computed, watch } from "vue";
+import CardUMKM from "./CardUMKM.vue";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/24/outline";
 
 // Props
 const props = defineProps<{
   allUmkm: Array<{
-    id: number
-    image: string
-    title: string
-    description: string
-    category: string
-  }>
-  searchQuery: string
-  selectedCategory: string | null
-}>()
+    id: number;
+    image: string;
+    title: string;
+    description: string;
+    category: string;
+  }>;
+  searchQuery: string;
+  selectedCategory: string | null;
+}>();
 
 // Filter UMKM berdasarkan search dan category
 const filteredUMKM = computed(() => {
-  let result = props.allUmkm
+  let result = props.allUmkm;
 
   // Filter by search query
   if (props.searchQuery.trim()) {
-    const query = props.searchQuery.toLowerCase()
-    result = result.filter(umkm => 
-      umkm.title.toLowerCase().includes(query) || 
-      umkm.description.toLowerCase().includes(query) ||
-      umkm.category.toLowerCase().includes(query)
-    )
+    const query = props.searchQuery.toLowerCase();
+    result = result.filter(
+      (umkm) =>
+        umkm.title.toLowerCase().includes(query) ||
+        umkm.description.toLowerCase().includes(query) ||
+        umkm.category.toLowerCase().includes(query)
+    );
   }
 
   // Filter by category
   if (props.selectedCategory) {
-    result = result.filter(umkm => umkm.category === props.selectedCategory)
+    result = result.filter((umkm) => umkm.category === props.selectedCategory);
   }
 
-  return result
-})
+  return result;
+});
 
 // Pagination settings
-const currentPage = ref(1)
-const itemsPerPage = 12
-const totalPages = computed(() => Math.ceil(filteredUMKM.value.length / itemsPerPage))
+const currentPage = ref(1);
+const itemsPerPage = 12;
+const totalPages = computed(() =>
+  Math.ceil(filteredUMKM.value.length / itemsPerPage)
+);
 
 // Reset to page 1 when search or filter changes
 watch([() => props.searchQuery, () => props.selectedCategory], () => {
-  currentPage.value = 1
-})
+  currentPage.value = 1;
+});
 
 // Computed untuk data yang ditampilkan di halaman aktif
 const paginatedUMKM = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage
-  const end = start + itemsPerPage
-  return filteredUMKM.value.slice(start, end)
-})
+  const start = (currentPage.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return filteredUMKM.value.slice(start, end);
+});
 
 // Computed untuk info pagination
 const paginationInfo = computed(() => {
-  const start = filteredUMKM.value.length > 0 ? (currentPage.value - 1) * itemsPerPage + 1 : 0
-  const end = Math.min(currentPage.value * itemsPerPage, filteredUMKM.value.length)
-  return { start, end, total: filteredUMKM.value.length }
-})
+  const start =
+    filteredUMKM.value.length > 0
+      ? (currentPage.value - 1) * itemsPerPage + 1
+      : 0;
+  const end = Math.min(
+    currentPage.value * itemsPerPage,
+    filteredUMKM.value.length
+  );
+  return { start, end, total: filteredUMKM.value.length };
+});
 
 // Ref untuk scroll ke grid
-const gridRef = ref<HTMLElement | null>(null)
+const gridRef = ref<HTMLElement | null>(null);
 
 // Functions
 const goToPage = (page: number) => {
   if (page >= 1 && page <= totalPages.value) {
-    currentPage.value = page
-    gridRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    currentPage.value = page;
+    gridRef.value?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-}
+};
 
 const previousPage = () => {
   if (currentPage.value > 1) {
-    currentPage.value--
-    gridRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    currentPage.value--;
+    gridRef.value?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-}
+};
 
 const nextPage = () => {
   if (currentPage.value < totalPages.value) {
-    currentPage.value++
-    gridRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    currentPage.value++;
+    gridRef.value?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-}
+};
 
 const handleCardClick = (umkm: any) => {
-  console.log('Card clicked:', umkm)
+  console.log("Card clicked:", umkm);
   // TODO
-}
+};
 
-// Generate page numbers 
+// Generate page numbers
 const visiblePages = computed(() => {
-  const pages = []
-  const delta = 1
-  
+  const pages = [];
+  const delta = 1;
+
   for (let i = 1; i <= totalPages.value; i++) {
     if (
       i === 1 ||
       i === totalPages.value ||
       (i >= currentPage.value - delta && i <= currentPage.value + delta)
     ) {
-      pages.push(i)
-    } else if (pages[pages.length - 1] !== '...') {
-      pages.push('...')
+      pages.push(i);
+    } else if (pages[pages.length - 1] !== "...") {
+      pages.push("...");
     }
   }
-  
-  return pages
-})
+
+  return pages;
+});
 </script>
 
 <template>
   <div class="w-full bg-blue-templok min-h-screen py-8">
     <div class="max-w-7xl mx-auto px-4">
-      <div ref="gridRef" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+      <div
+        ref="gridRef"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8"
+      >
         <CardUMKM
           v-for="umkm in paginatedUMKM"
           :key="umkm.id"
@@ -130,12 +142,19 @@ const visiblePages = computed(() => {
 
       <!-- No Results Message -->
       <div v-if="filteredUMKM.length === 0" class="text-center py-12">
-        <p class="text-white text-xl font-semibold mb-2">Tidak ada hasil ditemukan</p>
-        <p class="text-gray-300">Coba gunakan kata kunci lain atau hapus filter</p>
+        <p class="text-white text-xl font-semibold mb-2">
+          Tidak ada hasil ditemukan
+        </p>
+        <p class="text-gray-300">
+          Coba gunakan kata kunci lain atau hapus filter
+        </p>
       </div>
 
       <!-- Pagination -->
-      <div v-if="filteredUMKM.length > 0" class="flex items-center justify-between border-t border-white/10 px-4 py-3">
+      <div
+        v-if="filteredUMKM.length > 0"
+        class="flex items-center justify-between border-t border-white/10 px-4 py-3"
+      >
         <!-- Mobile -->
         <div class="flex flex-1 justify-between sm:hidden">
           <button
@@ -155,7 +174,9 @@ const visiblePages = computed(() => {
         </div>
 
         <!-- Desktop -->
-        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <div
+          class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between"
+        >
           <div>
             <p class="text-sm text-gray-300">
               Showing
@@ -167,8 +188,11 @@ const visiblePages = computed(() => {
               results
             </p>
           </div>
-          
-          <nav class="isolate inline-flex -space-x-px rounded-md" aria-label="Pagination">
+
+          <nav
+            class="isolate inline-flex -space-x-px rounded-md"
+            aria-label="Pagination"
+          >
             <button
               @click="previousPage"
               :disabled="currentPage === 1"
@@ -191,7 +215,7 @@ const visiblePages = computed(() => {
                 :class="[
                   page === currentPage
                     ? 'relative z-10 inline-flex items-center bg-green-templok px-4 py-2 text-sm font-semibold text-blue-templok focus:z-20'
-                    : 'relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white hover:bg-white/5 focus:z-20 focus:outline-offset-0'
+                    : 'relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white hover:bg-white/5 focus:z-20 focus:outline-offset-0',
                 ]"
               >
                 {{ page }}
