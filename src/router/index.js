@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router"
-import UMKMPage from "../pages/UMKMPage.vue"
 
 const routes = [
-  { path: "/", name: "home", component: UMKMPage }
+  { path: "/detail/:id", name: "detail", component: () => import("../pages/Detail.vue") },
+  { path: "/", name: "home", component: () => import("../pages/Home.vue") },
+
 ]
 
 const router = createRouter({

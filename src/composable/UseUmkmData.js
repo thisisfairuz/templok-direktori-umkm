@@ -8,8 +8,14 @@ export const useUmkmData = () => {
     image: umkm.foto,
     title: umkm.nama_umkm,
     description: umkm.deskripsi,
-    category: umkm.kategori.toUpperCase()
-  }))
+    address: umkm.alamat_umkm,
+    maps_url: umkm.lokasi,
+    category: umkm.kategori.toUpperCase(),
+    product: umkm.produk.map(p => ({
+      name: p.nama_produk,
+      price: p.harga_produk
+    }))
+  }));
 
   // Ambil kategori unik
   const categories = Array.from(
